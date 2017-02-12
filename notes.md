@@ -18,7 +18,7 @@ const myFirebaseAuthConfig = {
 @NgModule({
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig, 'Chat App')
+    AngularFireModule.initializeApp(firebaseConfig, myFirebaseAuthConfig)
   ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
@@ -43,3 +43,24 @@ implements OnInit, AfterViewChecked
       var messagesDiv = document.getElementById('messages');
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
+
+
+    // app.component.html
+    <h1>
+  Messages
+</h1>
+<div>
+  <span>logged in as: {{user ? user.auth.email : 'Anonymous'}}</span>
+  <button (click)="login()">Login</button>
+  <button (click)="logout()">Logout</button>
+</div>
+
+<div *ngFor="let message of messages | async">
+  <span style="font-weight: bold">[{{message.name}}]</span>
+  <span style="font-style: italic; color: grey">{{formatDate(message.time)}}</span>
+  <span>{{message.text}}</span>
+</div>
+<div>
+  <input [(ngModel)]="inputText">
+  <button (click)="submitMessage(inputText)">Submit</button>
+</div>
