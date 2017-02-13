@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { AngularFireModule, AuthProviders, AuthMethods, AngularFire} from 'angularfire2';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
-import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
   apiKey: '<your-key>',
@@ -17,6 +17,8 @@ export const firebaseConfig = {
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
+    MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   declarations: [ AppComponent ],
