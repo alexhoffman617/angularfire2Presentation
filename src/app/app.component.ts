@@ -11,5 +11,5 @@ import { AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'app works!!!';
 }
