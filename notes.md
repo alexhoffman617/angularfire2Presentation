@@ -1,3 +1,27 @@
+// Copy Paste Elements
+firebase.database.ServerValue.TIMESTAMP
+
+
+implements OnInit, AfterViewChecked
+
+    ngOnInit() {
+      this.scrollMessagesToBottom();
+    }
+
+    ngAfterViewChecked() {
+      this.scrollMessagesToBottom();
+    }
+
+    scrollMessagesToBottom() {
+      var messagesDiv = document.getElementById('messages');
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+
+
+
+
+
 // app.module.ts
 import { AngularFireModule } from 'angularfire2';
 
